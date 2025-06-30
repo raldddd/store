@@ -1,153 +1,103 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Akun Premium Store</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Shop</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
     body {
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
-      color: #00fff7;
-      overflow-x: hidden;
-    }
-    header {
-      background: #0f0f0f;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0d0d0d;
+      color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 2rem;
-      text-align: center;
     }
-    header h1 {
-      font-size: 2.5rem;
-      color: #00fff7;
-    }
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
-      color: #aaa;
-    }
-    .hero-image {
-      width: 100%;
-      height: 250px;
-      background: url('https://images.unsplash.com/photo-1607860101145-5223e2785d4e') center/cover no-repeat;
-      filter: brightness(0.6);
-    }
-    .container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    .product {
-      background: #1f1f1f;
-      border: 1px solid #00fff7;
-      border-radius: 10px;
-      padding: 1.5rem;
+
+    h1 {
+      font-size: 3rem;
       margin-bottom: 2rem;
+      background: linear-gradient(90deg, #0ff, #00f, #f0f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .product {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 1rem 0;
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 0 10px #111;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #0ff;
+    }
+
+    .product img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 8px #0ff);
       transition: transform 0.3s ease;
     }
-    .product:hover {
-      transform: scale(1.02);
-      background: #2a2a40;
+
+    .product:hover img {
+      transform: scale(1.2);
     }
-    .product h3 {
-      margin-bottom: 0.5rem;
-      color: #00ffe7;
-    }
-    .product img {
-      width: 48px;
-      height: 48px;
+
+    .description {
       margin-bottom: 1rem;
-      filter: brightness(0.9) saturate(1.5);
     }
+
     .price {
-      margin-top: 0.5rem;
-      font-size: 1rem;
-      font-weight: bold;
-      color: #00ffe7;
-    }
-    .order-btn {
-      display: inline-block;
-      padding: 0.7rem 1.5rem;
-      background: #00fff7;
-      color: #000;
-      text-decoration: none;
-      border-radius: 4px;
-      margin-top: 1rem;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-    .order-btn:hover {
-      background: #00cccc;
-    }
-    .testimonials {
-      padding: 2rem 1rem;
-      background: #0e0e1b;
-      text-align: center;
-    }
-    .testimonials h2 {
+      font-size: 1.2rem;
       margin-bottom: 1rem;
-      color: #00fff7;
+      color: #0ff;
     }
-    .testimonial {
-      max-width: 600px;
-      margin: 1rem auto;
-      background: #1c1c2c;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0, 255, 247, 0.1);
-      color: #ccc;
+
+    .order-btn {
+      background: linear-gradient(90deg, #0ff, #00f);
+      color: #000;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #666;
-      padding: 2rem 0;
-      background: #0f0f0f;
+
+    .order-btn:hover {
+      background: linear-gradient(90deg, #f0f, #00f);
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Akun Premium Store</h1>
-    <p>Future-style slots: Canva, ChatGPT, Spotify – Start from Rp 5.000</p>
-  </header>
-  <div class="hero-image"></div>  <div class="container">
-    <div class="product">
-      <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Canva Icon">
-      <h3>🎨 Canva Pro </h3>
-      <p>Akses 1 slot Canva Pro dengan garansi 30 hari. Tools desain profesional tanpa batas.</p>
-      <div class="price">Harga: Rp 8.000 / bulan</div>
-      <a class="order-btn" href="https://wa.me/6281234567890?text=Halo%20saya%20mau%20pesan%20slot%20Canva%20Pro">Pesan Sekarang</a>
-    </div><div class="product">
-  <img src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png" alt="Spotify Icon">
-  <h3>🎧 Spotify Premium </h3>
-  <p>Dengerin lagu tanpa iklan, kualitas tinggi. Masuk keluarga Spotify sekarang.</p>
-  <div class="price">Harga: Rp 10.000 / bulan</div>
-  <a class="order-btn" href="https://wa.me/6281234567890?text=Halo%20saya%20mau%20pesan%20Spotify%20slot">Pesan Sekarang</a>
-</div>
+  <h1>Cyber Shop</h1>
 
-<div class="product">
-  <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="ChatGPT Icon">
-  <h3>🤖 ChatGPT Plus </h3>
-  <p>Akses GPT-4 untuk tugas, riset, kerjaan, dan belajar coding. Power AI di tangan kamu.</p>
-  <div class="price">Harga: Rp 20.000 / 3 hari</div>
-  <a class="order-btn" href="https://wa.me/6281234567890?text=Halo%20saya%20mau%20akses%20ChatGPT%20Plus">Pesan Sekarang</a>
-</div>
+  <div class="product">
+    <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Product Icon">
+    <div class="description">Upgrade your gaming speed with this neon-enhanced accessory.</div>
+    <div class="price">$49.99</div>
+    <button class="order-btn">Order Now</button>
+  </div>
 
-  </div>  <div class="testimonials">
-    <h2>💬 Apa Kata Mereka?</h2>
-    <div class="testimonial">
-      <p>“Canva Pro langsung aktif! Gue jadi bisa bikin desain kece buat tugas kuliah.”</p>
-    </div>
-    <div class="testimonial">
-      <p>“ChatGPT-nya powerful banget. Bisa bantu skripsi dan kerjaan kantor. Fast respon juga.”</p>
-    </div>
-  </div>  <footer>
-    © 2025 AkunPremiumG. Crafted in the cyberverse by G.
-  </footer>
+  <div class="product">
+    <img src="https://cdn-icons-png.flaticon.com/512/4359/4359967.png" alt="Product Icon">
+    <div class="description">Cyber glasses to detect in-game enemies like a boss.</div>
+    <div class="price">$79.99</div>
+    <button class="order-btn">Order Now</button>
+  </div>
+
 </body>
 </html>
