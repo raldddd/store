@@ -1,204 +1,194 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>digitalz</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #0d0d0d;
       color: #f5f5f5;
-    }
+    }.navbar {
+  background: #111;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #222;
+}
 
-    /* Navbar */
-    .navbar {
-      background: #111;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #222;
-    }
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #0ff, #00f, #f0f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-    .navbar .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      background: linear-gradient(90deg, #0ff, #00f, #f0f);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
 
-    .navbar ul {
-      display: flex;
-      list-style: none;
-      gap: 1.5rem;
-    }
+.navbar ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1rem;
+}
 
-    .navbar ul li a {
-      color: #ccc;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: color 0.2s ease;
-    }
+.hero {
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+}
 
-    .navbar ul li a:hover {
-      color: #0ff;
-    }
+.hero h1 {
+  font-size: 3.5rem;
+  background: linear-gradient(90deg, #0ff, #00f, #f0f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-    /* Hero */
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem 2rem;
-    }
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 700px;
+  margin: 0 auto;
+}
 
-    .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(90deg, #0ff, #00f, #f0f);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+h2 {
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  margin-left: 2rem;
+  font-family: 'Orbitron', sans-serif;
+  color: #0ff;
+  border-left: 4px solid #0ff;
+  padding-left: 0.75rem;
+}
 
-    .hero p {
-      font-size: 1.2rem;
-      color: #ccc;
-      max-width: 700px;
-      margin: 0 auto;
-    }
+.category {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem 2rem;
+}
 
-    /* Sections */
-    h2 {
-      font-size: 1.5rem;
-      margin-top: 3rem;
-      margin-left: 2rem;
-      font-family: 'Orbitron', sans-serif;
-      color: #0ff;
-      border-left: 4px solid #0ff;
-      padding-left: 0.75rem;
-    }
+.product {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 0 10px #111;
+}
 
-    .category {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      padding: 1rem 2rem;
-    }
+.product img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 8px #0ff);
+}
 
-    .product {
-      background: #1a1a1a;
-      border: 1px solid #333;
-      border-radius: 16px;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 0 10px #111;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+.description {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: #ccc;
+}
 
-    .product:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px #0ff;
-    }
+.price {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #0ff;
+  font-weight: bold;
+}
 
-    .product img {
-      width: 120px;
-      height: 120px;
-      object-fit: contain;
-      margin-bottom: 1rem;
-      filter: drop-shadow(0 0 8px #0ff);
-      transition: transform 0.3s ease;
-    }
+.order-btn {
+  background: linear-gradient(90deg, #0ff, #00f);
+  color: #000;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+}
 
-    .product:hover img {
-      transform: scale(1.2);
-    }
+.checkout {
+  background: #111;
+  margin: 3rem 2rem;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #333;
+  box-shadow: 0 0 15px #000;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
 
-    .description {
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-      color: #ccc;
-    }
+.checkout h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #0ff;
+}
 
-    .price {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-      color: #0ff;
-      font-weight: bold;
-    }
+.checkout p {
+  font-size: 1rem;
+  margin: 0.25rem 0;
+}
 
-    .order-btn {
-      background: linear-gradient(90deg, #0ff, #00f);
-      color: #000;
-      border: none;
-      padding: 0.75rem 1.25rem;
-      font-size: 1rem;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
+.checkout .total {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #0ff;
+}
 
-    .order-btn:hover {
-      background: linear-gradient(90deg, #f0f, #00f);
-      transform: scale(1.05);
-    }
+.checkout-btn {
+  margin-top: 1.5rem;
+  background: #0ff;
+  color: #000;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 10px;
+}
 
-    /* Checkout */
-    .checkout {
-      background: #111;
-      margin: 3rem 2rem;
-      padding: 2rem;
-      border-radius: 12px;
-      border: 1px solid #333;
-      box-shadow: 0 0 15px #000;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+footer {
+  background: #111;
+  padding: 1rem;
+  text-align: center;
+  color: #555;
+  font-size: 0.9rem;
+  border-top: 1px solid #222;
+}
 
-    .checkout h3 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-      color: #0ff;
-    }
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+}
 
-    .checkout p {
-      font-size: 1rem;
-      margin: 0.25rem 0;
-    }
-
-    .checkout .total {
-      margin-top: 1rem;
-      font-weight: bold;
-      color: #0ff;
-    }
-
-    .checkout-btn {
-      margin-top: 1.5rem;
-      background: #0ff;
-      color: #000;
-      border: none;
-      padding: 0.75rem 2rem;
-      font-size: 1rem;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    /* Footer */
-    footer {
-      background: #111;
-      padding: 1rem;
-      text-align: center;
-      color: #555;
-      font-size: 0.9rem;
-      border-top: 1px solid #222;
-    }
   </style>
 </head>
 <body>
-
   <nav class="navbar">
     <div class="logo">digitalz</div>
     <ul>
@@ -206,55 +196,51 @@
       <li><a href="#">Products</a></li>
       <li><a href="#">Checkout</a></li>
     </ul>
-  </nav>
-
-  <section class="hero">
+  </nav>  <section class="hero">
     <h1>digitalz</h1>
     <p>Your futuristic store for premium digital services like Spotify, Canva, and Netflix — at unbeatable prices, powered by the underground.</p>
-  </section>
-
-  <h2>🎵 Music</h2>
+  </section>  <h2>🎵 Music</h2>
   <div class="category">
     <div class="product">
       <img src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png" alt="Spotify">
       <div class="description">Enjoy ad-free, offline, high-quality music on any device.</div>
       <div class="price">$3.99 / month</div>
-      <button class="order-btn">Order Now</button>
+      <button class="order-btn" onclick="addToCart('Spotify Premium', 3.99)">Order Now</button>
     </div>
-  </div>
-
-  <h2>🛠️ Productivity</h2>
+  </div>  <h2>🛠️ Productivity</h2>
   <div class="category">
     <div class="product">
       <img src="https://cdn-icons-png.flaticon.com/512/873/873120.png" alt="Canva">
       <div class="description">Design like a pro with full access to Canva Premium features.</div>
       <div class="price">$4.99 / month</div>
-      <button class="order-btn">Order Now</button>
+      <button class="order-btn" onclick="addToCart('Canva Premium', 4.99)">Order Now</button>
     </div>
-  </div>
-
-  <h2>🎬 Movie</h2>
+  </div>  <h2>🎬 Movie</h2>
   <div class="category">
     <div class="product">
       <img src="https://cdn-icons-png.flaticon.com/512/5977/5977590.png" alt="Netflix">
       <div class="description">Stream unlimited movies and shows on Netflix Premium.</div>
       <div class="price">$5.99 / month</div>
-      <button class="order-btn">Order Now</button>
+      <button class="order-btn" onclick="addToCart('Netflix Premium', 5.99)">Order Now</button>
     </div>
-  </div>
-
-  <div class="checkout">
+  </div>  <div class="checkout" id="checkoutBox">
     <h3>🛒 Checkout Summary</h3>
-    <p>Spotify Premium — 1x = $3.99</p>
-    <p>Canva Premium — 1x = $4.99</p>
-    <p>Netflix Premium — 1x = $5.99</p>
-    <div class="total">Total: $14.97</div>
+    <div id="cartItems"></div>
+    <div class="total" id="cartTotal"></div>
     <button class="checkout-btn">Proceed to Payment</button>
-  </div>
-
-  <footer>
+  </div>  <footer>
     &copy; 2025 digitalz. Built with 💻 and caffeine.
-  </footer>
-
-</body>
+  </footer>  <script>
+    const cartItems = [];
+    function addToCart(productName, price) {
+      cartItems.push({ name: productName, price });
+      const checkout = document.getElementById('checkoutBox');
+      const itemsContainer = document.getElementById('cartItems');
+      const totalContainer = document.getElementById('cartTotal');
+      checkout.style.display = 'block';
+      itemsContainer.innerHTML = cartItems.map(item => `<p>${item.name} — $${item.price.toFixed(2)}</p>`).join('');
+      const total = cartItems.reduce((sum, item) => sum + item.price, 0);
+      totalContainer.innerHTML = `Total: $${total.toFixed(2)}`;
+    }
+  </script></body>
 </html>
