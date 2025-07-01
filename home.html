@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home - digitalz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0d0d0d;
+      color: #f5f5f5;
+    }header {
+  background: #111;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #222;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(90deg, #0ff, #00f, #f0f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #0ff;
+}
+
+.hero {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #0ff, #00f, #f0f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 2rem;
+  background: linear-gradient(90deg, #0ff, #00f);
+  color: #000;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #f0f, #00f);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.feature {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #333;
+  box-shadow: 0 0 10px #111;
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #0ff;
+}
+
+.feature h3 {
+  color: #0ff;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.feature p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+footer {
+  background: #111;
+  padding: 1rem;
+  text-align: center;
+  color: #555;
+  font-size: 0.9rem;
+  border-top: 1px solid #222;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">digitalz</div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="index.html">Shop</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+      </ul>
+    </nav>
+  </header>  <section class="hero">
+    <h1>Welcome to digitalz</h1>
+    <p>Your one-stop shop for premium digital goods. Simple, fast, and futuristic.</p>
+    <a href="index.html" class="btn-primary">Start Shopping</a>
+  </section>  <section class="features">
+    <div class="feature">
+      <h3>⚡ Instant Access</h3>
+      <p>Get your product instantly after purchase. No waiting, no hassle.</p>
+    </div>
+    <div class="feature">
+      <h3>🔒 Secure & Anonymous</h3>
+      <p>We value your privacy. Our platform keeps your identity and transactions safe.</p>
+    </div>
+    <div class="feature">
+      <h3>💸 Affordable</h3>
+      <p>Enjoy premium services for a fraction of the price. Save more, get more.</p>
+    </div>
+  </section>  <footer>
+    &copy; 2025 digitalz. Built for the digital generation.
+  </footer>
+</body>
+</html>
