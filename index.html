@@ -2,53 +2,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home - digitalz</title>
+  <title>digitalz</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #0d0d0d;
+      background: #0d0d0d url('https://i.ibb.co/TkM89r0/streaming-bg.png') no-repeat center center fixed;
+      background-size: cover;
       color: #f5f5f5;
-    }header {
-  background: #111;
-  padding: 1.5rem 2rem;
+    }.navbar {
+  background: rgba(17, 17, 17, 0.9);
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #222;
 }
 
-.logo {
-  font-size: 1.8rem;
-  font-family: 'Orbitron', sans-serif;
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
   background: linear-gradient(90deg, #0ff, #00f, #f0f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-nav ul {
-  list-style: none;
+.navbar ul {
   display: flex;
+  list-style: none;
   gap: 1.5rem;
-  padding: 0;
-  margin: 0;
 }
 
-nav ul li a {
+.navbar ul li a {
   color: #ccc;
   text-decoration: none;
   font-size: 1rem;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
-nav ul li a:hover {
+.navbar ul li a:hover {
   color: #0ff;
 }
 
 .hero {
-  padding: 5rem 2rem;
   text-align: center;
+  padding: 4rem 2rem 2rem;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .hero h1 {
@@ -66,96 +66,126 @@ nav ul li a:hover {
   margin: 0 auto;
 }
 
-.btn-primary {
-  display: inline-block;
-  margin-top: 2rem;
-  background: linear-gradient(90deg, #0ff, #00f);
-  color: #000;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 12px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
+h2 {
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  margin-left: 2rem;
+  font-family: 'Orbitron', sans-serif;
+  color: #0ff;
+  border-left: 4px solid #0ff;
+  padding-left: 0.75rem;
 }
 
-.btn-primary:hover {
-  background: linear-gradient(90deg, #f0f, #00f);
-}
-
-.features {
+.category {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  padding: 4rem 2rem;
-  text-align: center;
+  padding: 1rem 2rem;
 }
 
-.feature {
-  background: #1a1a1a;
-  padding: 2rem;
-  border-radius: 12px;
+.product {
+  background: rgba(26, 26, 26, 0.85);
   border: 1px solid #333;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
   box-shadow: 0 0 10px #111;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #0ff;
+}
+
+.product img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 8px #0ff);
   transition: transform 0.3s ease;
 }
 
-.feature:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px #0ff;
+.product:hover img {
+  transform: scale(1.2);
 }
 
-.feature h3 {
-  color: #0ff;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.feature p {
-  color: #ccc;
+.description {
   font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+.price {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #0ff;
+  font-weight: bold;
+}
+
+.order-btn {
+  background: linear-gradient(90deg, #0ff, #00f);
+  color: #000;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.order-btn:hover {
+  background: linear-gradient(90deg, #f0f, #00f);
+  transform: scale(1.05);
 }
 
 footer {
-  background: #111;
+  background: rgba(17, 17, 17, 0.9);
   padding: 1rem;
   text-align: center;
-  color: #555;
+  color: #bbb;
   font-size: 0.9rem;
   border-top: 1px solid #222;
 }
 
   </style>
 </head>
-<body>
-  <header>
+<body>  <nav class="navbar">
     <div class="logo">digitalz</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="product.html">Products</a></li>
-        <li><a href="checkout.html">Checkout</a></li>
-      </ul>
-    </nav>
-  </header>  <section class="hero">
-    <h1>Welcome to digitalz</h1>
-    <p>Your one-stop shop for premium digital goods. Simple, fast, and futuristic.</p>
-    <a href="product.html" class="btn-primary">Start Shopping</a>
-  </section>  <section class="features">
-    <div class="feature">
-      <h3>⚡ Instant Access</h3>
-      <p>Get your product instantly after purchase. No waiting, no hassle.</p>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="index.html">Products</a></li>
+      <li><a href="checkout.html">Checkout</a></li>
+    </ul>
+  </nav>  <section class="hero">
+    <h1>digitalz</h1>
+    <p>Your futuristic store for premium digital services like Spotify, Canva, and Netflix — at unbeatable prices, powered by the underground.</p>
+  </section>  <h2>🎵 Music</h2>
+  <div class="category">
+    <div class="product">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png" alt="Spotify">
+      <div class="description">Enjoy ad-free, offline, high-quality music on any device.</div>
+      <div class="price">$3.99 / month</div>
+      <a href="checkout.html?item=Spotify%20Premium&price=3.99"><button class="order-btn">Order Now</button></a>
     </div>
-    <div class="feature">
-      <h3>🔒 Secure & Anonymous</h3>
-      <p>We value your privacy. Our platform keeps your identity and transactions safe.</p>
+  </div>  <h2>🛠️ Productivity</h2>
+  <div class="category">
+    <div class="product">
+      <img src="https://cdn-icons-png.flaticon.com/512/873/873120.png" alt="Canva">
+      <div class="description">Design like a pro with full access to Canva Premium features.</div>
+      <div class="price">$4.99 / month</div>
+      <a href="checkout.html?item=Canva%20Premium&price=4.99"><button class="order-btn">Order Now</button></a>
     </div>
-    <div class="feature">
-      <h3>💸 Affordable</h3>
-      <p>Enjoy premium services for a fraction of the price. Save more, get more.</p>
+  </div>  <h2>🎬 Movie</h2>
+  <div class="category">
+    <div class="product">
+      <img src="https://cdn-icons-png.flaticon.com/512/5977/5977590.png" alt="Netflix">
+      <div class="description">Stream unlimited movies and shows on Netflix Premium.</div>
+      <div class="price">$5.99 / month</div>
+      <a href="checkout.html?item=Netflix%20Premium&price=5.99"><button class="order-btn">Order Now</button></a>
     </div>
-  </section>  <footer>
-    &copy; 2025 digitalz. Built for the digital generation.
-  </footer>
-</body>
+  </div>  <footer>
+    &copy; 2025 digitalz. Built with 💻 and caffeine.
+  </footer></body>
 </html>
