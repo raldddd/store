@@ -5,9 +5,6 @@
   <title>digitalz</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -19,7 +16,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   border-bottom: 1px solid #222;
 }
 
@@ -35,14 +31,17 @@
   display: flex;
   list-style: none;
   gap: 1.5rem;
-  padding: 0;
-  margin: 0;
 }
 
 .navbar ul li a {
   color: #ccc;
   text-decoration: none;
   font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.navbar ul li a:hover {
+  color: #0ff;
 }
 
 .hero {
@@ -52,6 +51,7 @@
 
 .hero h1 {
   font-size: 3.5rem;
+  margin-bottom: 1rem;
   background: linear-gradient(90deg, #0ff, #00f, #f0f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -88,6 +88,12 @@ h2 {
   padding: 2rem;
   text-align: center;
   box-shadow: 0 0 10px #111;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #0ff;
 }
 
 .product img {
@@ -96,6 +102,11 @@ h2 {
   object-fit: contain;
   margin-bottom: 1rem;
   filter: drop-shadow(0 0 8px #0ff);
+  transition: transform 0.3s ease;
+}
+
+.product:hover img {
+  transform: scale(1.2);
 }
 
 .description {
@@ -119,47 +130,12 @@ h2 {
   font-size: 1rem;
   border-radius: 12px;
   cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.checkout {
-  background: #111;
-  margin: 3rem 2rem;
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid #333;
-  box-shadow: 0 0 15px #000;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  display: none;
-}
-
-.checkout h3 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  color: #0ff;
-}
-
-.checkout p {
-  font-size: 1rem;
-  margin: 0.25rem 0;
-}
-
-.checkout .total {
-  margin-top: 1rem;
-  font-weight: bold;
-  color: #0ff;
-}
-
-.checkout-btn {
-  margin-top: 1.5rem;
-  background: #0ff;
-  color: #000;
-  border: none;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  border-radius: 10px;
+.order-btn:hover {
+  background: linear-gradient(90deg, #f0f, #00f);
+  transform: scale(1.05);
 }
 
 footer {
@@ -171,30 +147,14 @@ footer {
   border-top: 1px solid #222;
 }
 
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .navbar ul {
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 1rem;
-  }
-}
-
   </style>
 </head>
-<body>
-  <nav class="navbar">
+<body>  <nav class="navbar">
     <div class="logo">digitalz</div>
     <ul>
       <li><a href="#">Home</a></li>
       <li><a href="#">Products</a></li>
-      <li><a href="#">Checkout</a></li>
+      <li><a href="checkout.html">Checkout</a></li>
     </ul>
   </nav>  <section class="hero">
     <h1>digitalz</h1>
@@ -205,7 +165,7 @@ footer {
       <img src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png" alt="Spotify">
       <div class="description">Enjoy ad-free, offline, high-quality music on any device.</div>
       <div class="price">$3.99 / month</div>
-      <button class="order-btn" onclick="addToCart('Spotify Premium', 3.99)">Order Now</button>
+      <a href="checkout.html?item=Spotify%20Premium&price=3.99"><button class="order-btn">Order Now</button></a>
     </div>
   </div>  <h2>🛠️ Productivity</h2>
   <div class="category">
@@ -213,7 +173,7 @@ footer {
       <img src="https://cdn-icons-png.flaticon.com/512/873/873120.png" alt="Canva">
       <div class="description">Design like a pro with full access to Canva Premium features.</div>
       <div class="price">$4.99 / month</div>
-      <button class="order-btn" onclick="addToCart('Canva Premium', 4.99)">Order Now</button>
+      <a href="checkout.html?item=Canva%20Premium&price=4.99"><button class="order-btn">Order Now</button></a>
     </div>
   </div>  <h2>🎬 Movie</h2>
   <div class="category">
@@ -221,26 +181,9 @@ footer {
       <img src="https://cdn-icons-png.flaticon.com/512/5977/5977590.png" alt="Netflix">
       <div class="description">Stream unlimited movies and shows on Netflix Premium.</div>
       <div class="price">$5.99 / month</div>
-      <button class="order-btn" onclick="addToCart('Netflix Premium', 5.99)">Order Now</button>
+      <a href="checkout.html?item=Netflix%20Premium&price=5.99"><button class="order-btn">Order Now</button></a>
     </div>
-  </div>  <div class="checkout" id="checkoutBox">
-    <h3>🛒 Checkout Summary</h3>
-    <div id="cartItems"></div>
-    <div class="total" id="cartTotal"></div>
-    <button class="checkout-btn">Proceed to Payment</button>
   </div>  <footer>
     &copy; 2025 digitalz. Built with 💻 and caffeine.
-  </footer>  <script>
-    const cartItems = [];
-    function addToCart(productName, price) {
-      cartItems.push({ name: productName, price });
-      const checkout = document.getElementById('checkoutBox');
-      const itemsContainer = document.getElementById('cartItems');
-      const totalContainer = document.getElementById('cartTotal');
-      checkout.style.display = 'block';
-      itemsContainer.innerHTML = cartItems.map(item => `<p>${item.name} — $${item.price.toFixed(2)}</p>`).join('');
-      const total = cartItems.reduce((sum, item) => sum + item.price, 0);
-      totalContainer.innerHTML = `Total: $${total.toFixed(2)}`;
-    }
-  </script></body>
+  </footer></body>
 </html>
